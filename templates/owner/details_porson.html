@@ -1,0 +1,33 @@
+{% extends 'owner/base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="card shadow-sm ">
+                                    <div class="card-body">
+                                        <img src="{{ porson.image.url }}" alt="" class="card-img" height="200">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mt-1">
+                                <p><i class="fas fa-file-signature mr-1 text-info"></i><b> Name :{{ porson.name }} </b></p>
+                                <p><i class="fas fa-phone mr-1 text-info"></i> contact : {{ porson.contact }}</p>
+                                <p><i class="fas fa-briefcase mr-1 text-info"></i> Profusion :{{ porson.cotegory.title }}</p>
+                                <p><i class="fas fa-envelope-open-text mr-1 text-info"></i> email Id  : {{ porson.email_id }}</p>
+                                <p><i class="fas fa-rupee-sign mr-1 text-info"></i> Wage  : {{ porson.wage }}/month</p>
+                                <p><i class="fas fa-address-book mr-1 text-info "></i> Address : {{ porson.address }}</p>
+                                <p><i class="fas fa-file-signature mr-1 text-info "></i> City : {{ porson.city }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

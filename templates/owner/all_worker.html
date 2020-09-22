@@ -1,0 +1,55 @@
+{% extends 'owner/base.html' %}
+
+{% block content %}
+<div class="container-fluid p-0">
+    <div class="row no-gutters">
+        <div class="col-lg-3">
+                <div class="list-group">
+                    <a href="{% url 'dashaboard' %}" class="list-group list-group-item list-group-item-action active">Dashaboard</a>
+                    <a href="{% url 'addworker' %}" class="list-group list-group-item list-group-item-action">Add Worker</a>
+                    <a href="{% url 'add_category' %}" class="list-group list-group-item list-group-item-action">Add Category</a>
+                    <a href="{% url 'all_worker' %}" class="list-group list-group-item list-group-item-action">All Worker</a>
+                    <a href="{% url 'profile' %}" class="list-group list-group-item list-group-item-action">Profile</a>
+                    <a href="{% url 'logout' %}" class="list-group list-group-item list-group-item-action">Logout</a>
+                </div>
+        </div>
+        <div class="col-lg-8 mx-auto">
+           <div class="card">
+            <div class="card-body">
+                <table class="table">
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Profusion</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Wage</th>
+                    <th>Action</th>
+                </tr>
+
+                {% for x in proson %}
+
+                 <tr>
+                    <td><img src="{{ x.image.url }}" alt="" style="height:100px; width:100px; border-radius:50px;"></td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.contact }}</td>
+                    <td>{{ x.cotegory }}</td>
+                    <td>{{ x.address }}</td>
+                    <td>{{ x.city }}</td>
+                    <td>{{ x.wage }}</td>
+                    <td>
+                        <a href="{% url 'update_proson'  x.porson_id %}" class="btn btn-primary">Update</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            </div>
+           </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

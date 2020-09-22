@@ -1,0 +1,28 @@
+{% extends 'owner/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>About Us</p>
+                                <small>
+                                    Hello Friends ,This is simple Local Services
+                                    Search Engine Website developed using
+                                    HTML , CSS ,Bootstrap Frontend and Python Django , Sqllite Backend
+                                </small>
+                            </div>
+                            <div class="col-lg-5">
+                                <img src="{% static 'ls.png' %}" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

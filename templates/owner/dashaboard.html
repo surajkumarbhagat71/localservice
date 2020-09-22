@@ -1,0 +1,39 @@
+{% extends 'owner/base.html' %}
+
+{% block content %}
+    <div class="container-fluid  p-0">
+        <div class="row no-gutters">
+            <div class="col-lg-3">
+                <div class="list-group">
+                    <a href="{% url 'dashaboard' %}" class="list-group list-group-item list-group-item-action active">Dashaboard</a>
+                    <a href="{% url 'addworker' %}" class="list-group list-group-item list-group-item-action">Add Worker</a>
+                    <a href="{% url 'add_category' %}" class="list-group list-group-item list-group-item-action">Add Category</a>
+                    <a href="{% url 'all_worker' %}" class="list-group list-group-item list-group-item-action">All Worker</a>
+                    <a href="{% url 'profile' %}" class="list-group list-group-item list-group-item-action">Profile</a>
+                    <a href="{% url 'logout' %}" class="list-group list-group-item list-group-item-action">Logout</a>
+                </div>
+            </div>
+            <div class="col-lg-8 ml-auto mt-2">
+                <div class="row">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="card">
+                            <div class="card-header text-center text-white bg-secondary"><p>All Category</p></div>
+                            <div class="card-body">
+                                <p class="text-center"><b>{{ all_category }}</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mx-auto">
+                        <div class="card">
+                            <div class="card-header text-white text-center bg-secondary"><p>All Worker's</p></div>
+                            <div class="card-body">
+                                <p class="text-center"><b>{{ all_worker }}</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'owner/base.html' %}
+
+
+{% block content %}
+    {% load crispy_forms_tags %}
+  <div class="container-fluid  p-0">
+        <div class="row no-gutters">
+            <div class="col-lg-3">
+                <div class="list-group">
+                    <a href="{% url 'dashaboard' %}" class="list-group list-group-item list-group-item-action active">Dashaboard</a>
+                    <a href="{% url 'addworker' %}" class="list-group list-group-item list-group-item-action">Add Worker</a>
+                    <a href="{% url 'add_category' %}" class="list-group list-group-item list-group-item-action">Add Category</a>
+                    <a href="{% url 'all_worker' %}" class="list-group list-group-item list-group-item-action">All Worker</a>
+                    <a href="{% url 'profile' %}" class="list-group list-group-item list-group-item-action">Profile</a>
+                    <a href="{% url 'logout' %}" class="list-group list-group-item list-group-item-action">Logout</a>
+                </div>
+            </div>
+              <div class="col-lg-6 mx-auto mt-3">
+                  <div class="card shadow-sm border-0">
+                      <div class="card-body">
+                          <p><b>>>Add Worker</b></p>
+                          <form action="" method="post" enctype="multipart/form-data">
+                              {% csrf_token %}
+                              <table class="table">
+                                  {{ form|crispy }}
+                              </table>
+                              <input type="submit" class="btn btn-success btn-block">
+                          </form>
+                      </div>
+                  </div>
+              </div>
+        </div>
+  </div>
+
+{% endblock %}

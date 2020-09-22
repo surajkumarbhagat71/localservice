@@ -1,0 +1,30 @@
+{% extends 'owner/base.html' %}
+
+{% block content %}
+   <div class="container mt-5" >
+   <div class="row">
+       <div class="col-lg-5 mx-auto">
+           <div class="card bg-secondary">
+               <div class="card-body">
+                   <table class="table text-white">
+                       <tr>
+                           <td>Name :</td>
+                           <td>{{ profile.0.name }}</td>
+                       </tr>
+                       <tr>
+                           <td>Caontact:</td>
+                           <td>{{ profile.0.contact }}</td>
+                       </tr>
+                       <tr>
+                           <td>Email Id:</td>
+                           <td>{{ profile.0.email }}</td>
+                       </tr>
+                   </table>
+                   <a href="{% url 'updateprofile'  profile.0.o_id %}" class="btn btn-primary float-right">Update</a>
+               </div>
+           </div>
+       </div>
+   </div>
+   </div>
+
+{% endblock %}
